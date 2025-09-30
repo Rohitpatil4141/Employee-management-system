@@ -1,71 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Employee Management System</title>
   <link rel="stylesheet" href="styles.css" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
     rel="stylesheet"
   />
 </head>
 <body>
   <header>
-    <h1>Employee Management System</h1>
+    <div class="container">
+      <h1>Employee Management System</h1>
+    </div>
   </header>
 
   <main>
-    <section class="form-section">
-      <h2>Add New Employee</h2>
-      <form id="employee-form">
-        <input
-          type="text"
-          id="name"
-          placeholder="Full Name"
-          required
-          autocomplete="off"
-        />
-        <input
-          type="email"
-          id="email"
-          placeholder="Email Address"
-          required
-          autocomplete="off"
-        />
-        <select id="department" required>
-          <option value="" disabled selected>Select Department</option>
-          <option>HR</option>
-          <option>Finance</option>
-          <option>Engineering</option>
-          <option>Marketing</option>
-          <option>Sales</option>
-        </select>
-        <button type="submit">Add Employee</button>
-      </form>
-    </section>
+    <div class="container">
+      <section class="form-section card">
+        <h2>Add New Employee</h2>
+        <form id="employee-form" novalidate>
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="John Doe"
+              required
+              autocomplete="off"
+              minlength="3"
+            />
+          </div>
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="john@example.com"
+              required
+              autocomplete="off"
+            />
+          </div>
+          <div class="input-group">
+            <label for="department">Department</label>
+            <select id="department" required>
+              <option value="" disabled selected>Select Department</option>
+              <option>HR</option>
+              <option>Finance</option>
+              <option>Engineering</option>
+              <option>Marketing</option>
+              <option>Sales</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">
+            <img
+              src="https://img.icons8.com/ios-filled/24/ffffff/plus-math.png"
+              alt="Add"
+            />
+            Add Employee
+          </button>
+        </form>
+      </section>
 
-    <section class="table-section">
-      <h2>Employee List</h2>
-      <table id="employee-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Department</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Employee rows will be inserted here -->
-        </tbody>
-      </table>
-    </section>
+      <section class="table-section card">
+        <h2>Employee List</h2>
+        <div class="table-wrapper">
+          <table id="employee-table" aria-label="Employee List">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Employee rows inserted here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer>
     <p>© 2025 Employee Management System</p>
   </footer>
+
+  <div id="alert" role="alert" aria-live="assertive"></div>
 
   <script src="script.js"></script>
 </body>
